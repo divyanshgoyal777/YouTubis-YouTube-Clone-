@@ -18,10 +18,21 @@ connection.once('open', () => {
     console.log('MongoDB database connection established successfully');
 });
 
-app.use(cors({ origin: 'https://youtubis-youtube-clone.onrender.com' }));
+const allowedOrigins = ['https://youtubis.netlify.app', 'https://youtubis-youtube-clone.onrender.com'];
+
+app.use(cors({
+    origin: function (origin, callback) {
+        if (!origin || allowedOrigins.indexOf(origin) !== -1) {
+            callback(null, true);
+        } else {
+            callback(new Error('Not allowed by CORS'));
+        }
+    }
+}));
+
 app.use(bodyParser.json());
 
-//Details submission
+// Details submission
 app.post('/user', async (req, res) => {
     const { name, email, photo } = req.body;
     const currentDate = new Date().toISOString().split('T')[0];
@@ -46,7 +57,7 @@ app.post('/user', async (req, res) => {
     }
 });
 
-//Feedback submission
+// Feedback submission
 app.post('/feedback', async (req, res) => {
     const { name, email, feedback } = req.body;
 
