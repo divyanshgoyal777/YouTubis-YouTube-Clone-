@@ -18,7 +18,7 @@ connection.once('open', () => {
     console.log('MongoDB database connection established successfully');
 });
 
-app.use(cors({ origin: 'http://localhost:5173' }));
+app.use(cors({ origin: 'https://youtubis-youtube-clone.onrender.com' }));
 app.use(bodyParser.json());
 
 //Details submission
