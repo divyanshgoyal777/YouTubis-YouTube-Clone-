@@ -16,13 +16,9 @@ You can view the live preivew [here](https://youtubis.netlify.app/).
 
 ## Technologies Used
 
-### Frontend
-
 - React.js
 - Tailwind
-
-### Backend
-
 - Node.js
 - Express.js
 - MongoDB
+- YouTube API
