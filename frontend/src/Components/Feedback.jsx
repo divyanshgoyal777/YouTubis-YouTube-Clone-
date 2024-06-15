@@ -41,7 +41,7 @@ const Feedback = () => {
   };
 
   return (
-    <div className="max-w-screen-lg mx-auto p-4 text-white">
+    <div className="max-w-screen-lg mx-auto p-4 text-white md:mb-auto mb-20">
       <div className='flex items-center gap-2 mb-4'>
         <img className='invert border rounded-full p-3 bg-gray-400' width="70px" src={feedbacksvg} alt="Feedback" />
         <h2 className="text-4xl font-bold">Send feedback</h2>
